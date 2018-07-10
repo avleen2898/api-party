@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Route, NavLink, Switch} from 'react-router-dom';
 
 import './App.css';
-import Github from './Github'
+import Github from './Github';
+import Homework from './Homework';
 
 class App extends Component {
   render() {
@@ -17,10 +18,14 @@ class App extends Component {
           <li>
             <NavLink to="/github"> Github API </NavLink>
           </li>
+          <li>
+            <NavLink to="/homework"> Homework </NavLink>
+          </li>
         </ul>
 
         <Switch>
           <Route path="/github" component={Github} />
+          <Route path="/homework" component={Homework} />
           <Route render={() => (
             <p> To get started, click one of the links above. </p>
           )}/>
