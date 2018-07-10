@@ -11,6 +11,11 @@ class Github extends Component{
         this.setState({userName: ev.target.value});
     }
 
+    handleSubmit = (ev) => {
+        ev.preventDefault();
+        this.props.history.push(`/github/${this.state.userName}`);
+    }
+
     render(){
         return(
             <div className="Github">
@@ -19,7 +24,7 @@ class Github extends Component{
                     alt="GitHub"
                     className="logo"
                 />
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text" value={this.state.userName} onChange={this.handleChange} required autoFocus />
                     </div>
